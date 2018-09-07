@@ -8,7 +8,7 @@ http://localhost:8000/teste1 (não funciona pois o formulário, o controller e o
 http://localhost:8000/teste2 (funciona perfeitamente, porém, está fora do meu módulo)
 
 # Solução
-Para ficar documentado para quem passar pelo mesmo. Depois de muito testar (pois não encontrei nada na internet relacionado) a solução foi simples. No arquivo de rotas do módulo, incluir Route::group(['middleware' => 'web'], function () {, ficando assim:
+Para ficar documentado para quem passar pelo mesmo. Não encontrei nada na internet relacionado, e a solução foi dada no Grupo do Laravel no Instagram e foi simples. No arquivo de rotas do módulo, incluir Route::group(['middleware' => 'web'], function () {, ficando assim:
 
 Route::group(['middleware' => 'web'], function () {
     Route::get('teste1', ['as'=>'teste1a', 'uses'=>'Visitantes\NovaSenhaController@teste1a']);
